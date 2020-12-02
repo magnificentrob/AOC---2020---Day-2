@@ -40,9 +40,8 @@ for lines in file:
     maximum = maxValue(lines)-1
     policy = passwordPolicy(lines)
     pWord = password(lines)
-    if pWord[minimum] == policy and pWord[maximum] != policy:
-        count +=1
-    if pWord[minimum] != policy and pWord[maximum] == policy:
-        count +=1
+    if pWord[minimum] == policy or pWord[maximum] == policy:
+        if pWord[minimum] != pWord[maximum]:
+            count +=1
 
 print(count)
